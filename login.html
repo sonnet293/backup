@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>로그인 · 코드 백업소</title>
+<script>document.documentElement.style.visibility = "hidden";</script>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="login-page">
+  <form class="login-card" id="login-form">
+    <div class="login-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20z"/></svg>
+      <span>코드 백업소</span>
+    </div>
+
+    <div class="field">
+      <label for="email-input">이메일</label>
+      <input type="email" id="email-input" autocomplete="username" required />
+    </div>
+    <div class="field">
+      <label for="password-input">비밀번호</label>
+      <input type="password" id="password-input" autocomplete="current-password" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary login-submit" id="login-btn">로그인</button>
+    <div class="login-error" id="login-error"></div>
+  </form>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* ============================================================
+   폴더 상세 페이지 (backup.html)
+   ============================================================ */
+
+.folder-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.folder-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.folder-header-title svg {
+  width: 34px;
+  height: 34px;
+  color: var(--folder);
+  flex-shrink: 0;
+}
+
+.folder-header-title h1 {
+  font-size: 22px;
+  margin: 0 0 3px;
+  letter-spacing: -0.01em;
+}
+
+.folder-header-title .folder-sub {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.folder-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.toolbar .search-box {
+  max-width: 320px;
+}
+
+/* ------------------------------------------------------------
+   파일 트리
+   ------------------------------------------------------------ */
+.file-tree {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tree-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.tree-group:last-child {
+  border-bottom: none;
+}
+
+.tree-dir-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-faint);
+  background: var(--surface-2);
+  letter-spacing: 0.02em;
+}
+
+.tree-dir-label svg {
+  width: 13px;
+  height: 13px;
+  color: var(--folder-dim);
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 28px;
+  border-top: 1px solid var(--border);
+  transition: background .12s;
+}
+
+.tree-group > .file-row:first-of-type {
+  border-top: none;
+}
+
+.file-row:hover {
+  background: var(--surface-2);
+}
+
+.file-row .file-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.file-row .file-name {
+  font-family: var(--font-code);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-row .file-name:hover {
+  color: var(--accent);
+}
+
+.file-row .file-meta {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.lang-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.lang-html { background: rgba(228, 105, 71, .16); color: #ea7a58; }
+.lang-css  { background: rgba(86, 145, 245, .16); color: #6ea3f7; }
+.lang-javascript { background: rgba(240, 200, 70, .16); color: #e3c250; }
+.lang-json { background: rgba(150, 150, 160, .18); color: #b3b6c2; }
+.lang-typescript { background: rgba(83, 142, 232, .16); color: #6ea3f7; }
+.lang-other { background: rgba(150, 150, 160, .18); color: #b3b6c2; }
+
+.file-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  color: var(--text-faint);
+  transition: background .12s, color .12s;
+}
+
+.icon-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.icon-btn.preview:hover { color: var(--accent); }
+.icon-btn.danger:hover { color: var(--danger); background: rgba(239, 107, 107, .12); }
+
+.icon-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ------------------------------------------------------------
+   코드 미리보기 패널 (인라인 토글)
+   ------------------------------------------------------------ */
+.code-panel {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: #0b0d13;
+}
+
+.code-panel.open {
+  display: block;
+}
+
+.code-panel-inner {
+  padding: 18px 22px;
+  overflow-x: auto;
+}
+
+.code-panel pre {
+  margin: 0;
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.code-panel .ql-editor {
+  padding: 0;
+  min-height: 0;
+}
+
+.code-panel .ql-editor pre.ql-syntax {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
